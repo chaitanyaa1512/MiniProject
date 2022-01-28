@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing:border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 80%;
+  margin-left:10%;
+  font-size: 24px;
+  font-family: 'Aharoni';
+  text-align: center;
+  padding: 12px 20px 12px 40px;
+  border: 5px solid rgb(9, 235, 148);
+  margin-bottom: 12px;
+}
+#bg {
+  /* The image used */
+  background-image: url("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/arent-pyke-amareloterrrace-halfwidth-1701-2-3-at2x-3-1551117561.jpg?crop=0.835xw:1.00xh;0.0816xw,0&resize=480:*");
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#myTable {
+  border-collapse:collapse;
+  table-layout: auto;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 3px solid rgb(184, 245, 16);
+  font-size: 22px;
+  font-style: italic;
+  color:black;
+  background-color: beige;
+  opacity: 0.7;
+
+  
+  
+}
+
+#myTable th, #myTable td {
+  text-align:left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid rgb(59, 61, 194);
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #b1d121;
+  font-size: 80%;
+  font-family: 'cooper black';
+  color:darkslateblue;
+}
+</style>
+
+</head>
+<body id="bg"> 
+  
+<h2 style= "color:rgb(20, 199, 199); font-family:'Broadway'; font-size:400%; text-align:center">THE TREASURE CHEST📚</h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search🧐" title="Type in a name">
+
+<table class="right" id="myTable">
+  <tr class="header">
+    <th style="width:60%;">BOOK</th>
+    <th style="width:40%;">AUTHOR</th>
+  </tr>
+  <tr>
+    <td>Think like a Monk</td>
+    <td>Jay Shetty</td>
+  </tr>
+  <tr>
+    <td>Ikigai</td>
+    <td>Hector Garcia</td>
+  </tr>
+  <tr>
+    <td>The Alchemist</td>
+    <td>Paulo Coelho</td>
+  </tr>
+  <tr>
+    <td>The Little Big Things</td>
+    <td>Henry Fraser</td>
+  </tr>
+  <tr>
+    <td>The Discomfort Of Evening</td>
+    <td>Marieke Lucas Rijneveld </td>
+  </tr>
+  <tr>
+    <td>The Spy</td>
+    <td>Paulo Coelho</td>
+  </tr>
+  <tr>
+    <td>Where the Crawdads Sing</td>
+    <td>Delia Owens</td>
+  </tr>
+  <tr>
+    <td>The Secret</td>
+    <td>Rhonda Byrne</td>
+  </tr>
+  <tr>
+    <td>The Girl Who Drank the Moon</td>
+    <td>Kelly Barnhill</td>
+  </tr>
+  <tr>
+    <td>The Girl in Room 105 </td>
+    <td>Chetan Bhagat</td>
+  </tr>
+  <tr>
+    <td>The Palace Of Illusions</td>
+    <td>Chitra Banerjee</td>
+  </tr>
+  <tr>
+    <td>The Art of Letting Go</td>
+    <td>Sanhita Baruah</td>
+  </tr>
+  <tr>
+    <td>The Subtle Art of not giving a F*ck</td>
+    <td>Mark Manson</td>
+  </tr>
+  <tr>
+    <td>Attitude is Everything</td>
+    <td>Jeff Keller</td>
+  </tr>
+  <tr>
+    <td>Atomic Habits</td>
+    <td>James Clear</td>
+  </tr>
+  <tr>
+    <td>Thrive</td>
+    <td>Arianna Huffington</td>
+  </tr>
+  <tr>
+    <td>The 4-Hour Work Week</td>
+    <td>Timothy Ferriss</td>
+  </tr>
+  <tr>
+    <td>Get out of my Head</td>
+    <td>Meredith Arthur</td>
+  </tr>
+  <tr>
+    <td>Chatter</td>
+    <td>Ethan Kross</td>
+  </tr>
+  <tr>
+    <td>Quiet</td>
+    <td>Susan Cain</td>
+  </tr>
+  <tr>
+    <td>2030</td>
+    <td>Mauro F. Guillen</td>
+  </tr>
+  <tr>
+    <td>The Code Breaker</td>
+    <td>Walter Isaacson</td>
+  </tr>
+  <tr>
+    <td>The Delusions Of Crowds</td>
+    <td>William J. Bernstein</td>
+  </tr>
+  <tr>
+    <td>The Disordered Cosmos</td>
+    <td>Chanda Prescod-Weinstein</td>
+  </tr>
+  </table>
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
+</body>
+</html>
